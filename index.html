@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweets by Jhea Cake Shop</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to bottom, #fde2e4, #fff5f7);
+    color: #5a2a2a;
+}
+
+header {
+    background-color: #d63384;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #b03060;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 230px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+button {
+    background: #d63384;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: #b03060;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.gallery img {
+    width: 220px;
+    margin: 10px;
+    border-radius: 12px;
+}
+
+.info-box {
+    background: #ffe0eb;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+}
+
+iframe {
+    width: 90%;
+    height: 300px;
+    border: 0;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+footer {
+    background: #d63384;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(item, price) {
+    cart.push(item + " - ₱" + price);
+    total += price;
+
+    document.getElementById("cart-items").innerHTML = cart.join("<br>");
+    document.getElementById("total").innerHTML = "₱" + total;
+}
+
+function checkout() {
+    alert("Order placed! Thank you for choosing Sweets by Jhea 🎂🍫");
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎂 Sweets by Jhea</div>
+    <p>Delicious cakes & brownies made with love by Jhea Cabradilla</p>
+
+    <nav>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit Us</a>
+        <a href="#cart">Cart</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Welcome!</h2>
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" width="250">
+    <p>Premium cakes and brownies baked fresh daily in Taguig BGC.</p>
+</section>
+
+<section id="menu">
+    <h2>Our Products & Pricing</h2>
+
+    <div class="menu-container">
+
+        <!-- Chocolate Cake -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+            <h3>Chocolate Cake</h3>
+            <p>₱350 (Small)</p>
+            <p>₱750 (Medium)</p>
+            <p>₱1200 (Large)</p>
+            <button onclick="addToCart('Chocolate Cake Small', 350)">Add Small</button>
+            <button onclick="addToCart('Chocolate Cake Medium', 750)">Add Medium</button>
+        </div>
+
+        <!-- Chocolate Brownies -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+            <h3>Chocolate Brownies</h3>
+            <p>₱95 (1pc)</p>
+            <p>₱520 (Box of 6)</p>
+            <p>₱980 (Box of 12)</p>
+            <button onclick="addToCart('Brownies 1pc', 95)">Add 1pc</button>
+            <button onclick="addToCart('Brownies Box of 6', 520)">Add Box of 6</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Gallery 🎂🍫</h2>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35">
+        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c">
+    </div>
+</section>
+
+<section id="visit">
+    <h2>Visit Our Shop 📍</h2>
+
+    <div class="info-box">
+        <p><strong>Owner:</strong> Jhea Cabradilla</p>
+        <p><strong>Location:</strong> Taguig, BGC</p>
+        <p><strong>Walk-in:</strong> ✔ Available</p>
+        <p><strong>Delivery:</strong> ✔ Available</p>
+
+        <p><strong>Contact:</strong> 09613886728</p>
+
+        <a href="tel:09613886728" class="contact-btn">📞 Call Now</a>
+        <a href="sms:09613886728?body=Hello%20I%20want%20to%20order" class="contact-btn">💬 Text Order</a>
+
+        <p><strong>Email:</strong> sweetsbyjhea@gmail.com</p>
+        <p><strong>Instagram:</strong> @sweetsbyjhea</p>
+
+        <iframe src="https://maps.google.com/maps?q=BGC%20Taguig&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+</section>
+
+<section id="cart">
+    <h2>Your Cart 🛒</h2>
+    <p id="cart-items">No items yet</p>
+    <h3>Total: <span id="total">₱0</span></h3>
+
+    <button onclick="checkout()">Place Order</button>
+</section>
+
+<footer>
+    <p>&copy; 2026 Sweets by Jhea Cake Shop</p>
+</footer>
+
+</body>
+</html>
